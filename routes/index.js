@@ -9,12 +9,12 @@ router.get('/', async function(req, res, next) {
   res.json(autores.rows);
 });
 
-router.get('/inserir', async function(req, res, next) {
+router.post('/inserir', async function(req, res, next) {
 
   const autor = {
-    nome: "Marcelo",
-    sobrenome: "Dominador",
-    datanasc: "2000/01/01"
+    nome: " ",
+    sobrenome: " ",
+    datanasc: " "
   }
   const autores = await Autor.inserir(autor);
   res.json(autores.rows);
@@ -23,10 +23,10 @@ router.get('/inserir', async function(req, res, next) {
 router.get('/atualizar', async function(req, res, next) {
 
     const autor = {
-      nome: "Pedrao",
-      sobrenome: "Rei delas",
-      datanasc: "2000/01/02",
-      id: "1"
+      nome: " ",
+      sobrenome: " ",
+      datanasc: " ",
+      id: " "
     }
   
   const autores = await Autor.atualizar(autor);
@@ -36,7 +36,7 @@ router.get('/atualizar', async function(req, res, next) {
 router.get('/deletar', async function(req, res, next) {
 
   const autor = {
-    id: "1"
+    id: " "
   }
   
   const autores = await Autor.deletar(autor);

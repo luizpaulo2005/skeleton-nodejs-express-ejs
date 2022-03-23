@@ -16,16 +16,9 @@ router.post('/inserir', async function(req, res, next) {
 
 });
 
-router.get('/atualizar', async function(req, res, next) {
-
-    const autor = {
-      nome: " ",
-      sobrenome: " ",
-      datanasc: " ",
-      id: " "
-    }
+router.put('/atualizar', async function(req, res, next) {
   
-  const autores = await Autor.atualizar(autor);
+  const autores = await Autor.atualizar(req.body);
   res.json(autores.rows);
 });
 

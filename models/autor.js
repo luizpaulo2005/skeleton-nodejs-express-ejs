@@ -9,7 +9,7 @@ class Autor {
   }
   static async selecionar(){
     const connect = await db.connect();
-    return await connect.query("select * from autores");
+    return await connect.query("select * from autores order by id asc");
   }
   static async atualizar(data){
     const connect = await db.connect();

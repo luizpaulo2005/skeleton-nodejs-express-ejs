@@ -15,6 +15,11 @@ router.get('/livros', async function(req, res, next) {
   res.json(livros.rows);
 });
 
+router.get('/livrospautor', async function(req, res, next){
+  const livros = await Livro.livropautor(req.body);
+  res.json(livros.rows);
+})
+
 router.post('/inserir', async function(req, res, next) {
 
   const autores = await Autor.inserir(req.body);
